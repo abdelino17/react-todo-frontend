@@ -30,7 +30,6 @@ export const updateTodo = (todo: Todo): Promise<any> => {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            id: todo.id,
             title: todo.title,
             completed: todo.completed
         })
@@ -40,5 +39,5 @@ export const updateTodo = (todo: Todo): Promise<any> => {
 export const deleteTodo = (id: number | undefined): Promise<any> => {
     return fetch(`${baseUrl}/${id}`, {
         method: "DELETE",
-    }).then((res) => res.json())
+    }).then((res) => res)
 }
